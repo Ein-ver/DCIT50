@@ -21,7 +21,7 @@ public class Deck {
 	}
 
 	Deck shuffle() {
-
+		Collections.shuffle(this.cards);
 	}
 
 	Card take() {
