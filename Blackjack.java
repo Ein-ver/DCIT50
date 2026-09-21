@@ -15,61 +15,93 @@ public class Blackjack {
 		Scanner sc = new Scanner(System.in);
 
 		// Variables
-		int youHand = 0, comHand = 0;
-
-		//System.out.println(deck.cards.get(0));
+		int youVal = 0, comVal = 0;
+		String choice = "";
 
 		// GAME THING
 
 		// shuffle then add two cards
-		deck.shuffle();
+		// Dito pwede naman shuffle muna bago mag take pero kelangan ata ng method chaining
+		//deck.shuffle();
 		for ( int i = 0	; i < 2 ; i++ ) {
-			playerHand.addCard(deck.take());
-			computerHand.addCard(deck.take());
+			playerHand.addCard(deck.shuffle().take());
+			computerHand.addCard(deck.shuffle().take());
 		}
-		//while (true) {
+
+		// Compute computer hand before(hand) funny
+		comVal = handValue(computerHand);
+		
+		// yo
+		gurt:
+		while (true) {
 			System.out.println("Your Hand: \n" + playerHand);
-			for (int i = 0 ; i < playerHand.cards.size() ; i++) {
-				playerVal = value(playerHand.cards.get(i));
-				System.out.println("val value: " + val);
+			youVal = handValue(playerHand);
+			// DEBUG STUFF
+			//System.out.println("Hand Value: " + youVal);
+			if (youVal <= 21) {
+				System.out.print("Hit [Y/N]? ");
+				choice = sc.nextLine().toUpperCase();
+
+				// nakalimutan ko pero alam ko lagi nagstuck kapag nagamit ng nextLine kaya meron uling ganito
+				//sc.nextLine();
+
+				switch (choice) {
+					case "Y":
+						playerHand.addCard(deck.shuffle().take());
+						break;
+					case "N":
+						if (youVal > comVal) {
+							System.out.println("Computer Hand: \n" + computerHand);
+							System.out.println("YOU WIN GAZZILION DOLLARS!!");
+						}
+						else {
+							System.out.println("Computer Hand: \n" + computerHand);
+							System.out.println("Lmao.");
+						}
+						break gurt;
+					default:
+						System.out.println("What kinda answer is that broski\n");
+				}
 			}
-
-			// reset
-			val = 0;
-
-			System.out.println("Value: " + playerVal);
-
-			System.out.println("Computer's Hand: \n" + computerHand);
-		//}
+			else {
+				System.out.println("You busted!");
+				break gurt;
+			}
+		}
 
 	}
 
-	
+
 	static int value(Card card) {
 		int value = val;
 
 		String cardCheck = card.rank;
-		System.out.println(cardCheck);
+		// DEBUG STUFF
+		//System.out.println(cardCheck);
 
 		// card.suit is brilliant Ese!!!
 		// holy hell
 		// lmao its rank, not suit
 		if (cardCheck.contains("k") || cardCheck.contains("q") || cardCheck.contains("j")) {
-			System.out.println("its special card yo");
+			// DEBUG STUFF
+			//System.out.println("its special card yo");
 			value += 10;
 		}
 		else if (cardCheck.contains("a")) {
-			if (value < 11) {
-				System.out.println("THE GOATTTT!!!");
-				value += 10;
+			if (value <= 10) {
+				// DEBUG STUFF
+				//System.out.println("THE GOATTTT!!!");
+				value += 11;
 			}
 			else {
-				System.out.println("nuke the whole generation");
+				// DEBUG STUFF
+				//System.out.println("nuke the whole generation");
 				value += 1;
 			}
 		}
 		else {
-			System.out.println("i mean its alright");
+			// DEBUG STUFF
+			//System.out.println("i mean its alright");
 			value += Integer.parseInt(cardCheck);
 		}
 
@@ -78,8 +110,19 @@ public class Blackjack {
 	}
 	
 
-	static int handValue(Hand hand) {
-		
+	static int handValue(Hand hand) {	
+		int handVal = 0;
+
+		for (int i = 0 ; i < hand.cards.size() ; i++) {
+				handVal = value(hand.cards.get(i));
+				// DEBUG STUFF
+				//System.out.println("val value: " + val);
+		}
+
+		// reset
+		val = 0;
+
+		return handVal;
 	}
 }
 
