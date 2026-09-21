@@ -23,6 +23,7 @@ public class Blackjack {
 		}
 		//while (true) {
 			System.out.println("Your Hand: \n" + playerHand);
+			System.out.println("Computer's Hand: \n" + computerHand);
 		//}
 
 	}
