@@ -44,14 +44,15 @@ public class Blackjack {
 
 		// card.suit is brilliant Ese!!!
 		// holy hell
-		if (card.suit.contains("JKQ")) {
+		// lmao its rank, not suit
+		if (card.rank.contains("JKQ")) {
 			value += 10;
 		}
-		else if (card.suit.contains("23456789")) {
-			value += Integer.parseInt(card.suit);
+		else if (card.rank.contains("23456789")) {
+			value += Integer.parseInt(card.rank);
 		}
 
-		if (card.suit.equals("A")) {
+		if (card.rank.equals("A")) {
 			if (value < 11) {
 				value += 10;
 			}
