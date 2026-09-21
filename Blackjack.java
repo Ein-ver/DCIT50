@@ -53,11 +53,12 @@ public class Blackjack {
 					case "N":
 						if (youVal > comVal) {
 							System.out.println("Computer Hand: \n" + computerHand);
-							System.out.println("YOU WIN GAZZILION DOLLARS!!");
+							System.out.println("You Win!");
+							//System.out.println("YOU WIN GAZZILION DOLLARS!!");
 						}
 						else {
 							System.out.println("Computer Hand: \n" + computerHand);
-							System.out.println("Lmao. (You Lost)");
+							System.out.println("You Lost!");
 						}
 						break gurt;
 
@@ -81,7 +82,7 @@ public class Blackjack {
 							
 							// Check if the answer go below zero
 							if (deleteIndex < 0) {
-								System.out.println("nuh uh \n");
+								System.out.println("Invalid. \n");
 								break;
 							}
 							else {
@@ -92,7 +93,7 @@ public class Blackjack {
 
 						}
 					default:
-						System.out.println("What kinda answer is that broski\n");
+						System.out.println("Invalid Answer.\n");
 				}
 			}
 			else {
