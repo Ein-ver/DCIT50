@@ -24,15 +24,17 @@ public class Deck {
 	// Done i guess...
 	Deck shuffle() {
 		// Create new Card
-		Deck newDeck = new Deck();
+		Deck newDeck = Blackjack.deck;
 
 		// Shuffle them
 		Collections.shuffle(newDeck.cards);
 		
 		// Add tto this card
+		// UNNECESSARY!!
+		/*
 		this.cards.clear();
 		this.cards.addAll(newDeck.cards);
-
+		*/
 		return newDeck;
 	}
 	

@@ -1,4 +1,2 @@
-javac Card.java
-javac Hand.java
-javac Blackjack.java
+javac Card.java, Hand.java, Blackjack.java
 java Blackjack

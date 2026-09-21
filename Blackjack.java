@@ -11,13 +11,9 @@ public class Blackjack {
 	static Hand computerHand = new Hand();
 
 	public static void main(String[] args) {
-		
-		//System.out.println(deck.shuffle());
-		System.out.println(deck.cards);
-		System.out.println(deck.take() + "\n");
-		System.out.println(deck.cards);
-		System.out.println(deck.cards.get(0));
 
+		System.out.println(deck);
+		System.out.println(deck.shuffle());
 	}
 
 	//static int value(Card card) {
