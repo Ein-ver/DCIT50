@@ -22,6 +22,7 @@ public class Deck {
 	}
 
 	// Done i guess...
+	// Done Done
 	Deck shuffle() {
 		// Create new Card
 		Deck newDeck = Blackjack.deck;
