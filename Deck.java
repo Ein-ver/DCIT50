@@ -20,6 +20,18 @@ public class Deck {
 		}
 	}
 
+	Deck shuffle() {
+
+	}
+
+	Card take() {
+
+	}
+
+	Deck put (Card card) {
+		
+	}
+
  	// binigay ni sir na extra nung lab
 	public String toString() {
 		String card = "";

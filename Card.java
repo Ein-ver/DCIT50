@@ -3,6 +3,8 @@
 // Student ID: 251017563
 // Date: September 21, 2026
 
+// eto okay nato
+
 public class Card {
 
 	// Constructor stuff
