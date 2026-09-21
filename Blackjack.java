@@ -42,24 +42,31 @@ public class Blackjack {
 	static int value(Card card) {
 		int value = 0;
 
+		String cardCheck = card.rank;
+		System.out.println(cardCheck);
+
 		// card.suit is brilliant Ese!!!
 		// holy hell
 		// lmao its rank, not suit
-		if (card.rank.contains("JKQ")) {
+		if (cardCheck.contains("k") || cardCheck.contains("q") || cardCheck.contains("j")) {
+			System.out.println("its special card yo");
 			value += 10;
 		}
-		else if (card.rank.contains("23456789")) {
-			value += Integer.parseInt(card.rank);
-		}
-
-		if (card.rank.equals("A")) {
+		else if (cardCheck.contains("a")) {
 			if (value < 11) {
+				System.out.println("THE GOATTTT!!!");
 				value += 10;
 			}
 			else {
+				System.out.println("nuke the whole generation");
 				value += 1;
 			}
 		}
+		else {
+			System.out.println("i mean its alright");
+			value += Integer.parseInt(cardCheck);
+		}
+
 
 		return value;
 	}
