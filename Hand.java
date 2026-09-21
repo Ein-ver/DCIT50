@@ -21,6 +21,10 @@ public class Hand {
 	//}
 
 	public String toString() {
-		return "";
+		String hand = "";
+		for (int i = 0 ; i < cards.size() ; i++) {
+			hand += cards.get(i) + "\n";
+		}
+		return "Hand: \n" + hand;
 	}
 }

@@ -46,7 +46,7 @@ public class Deck {
 
 	// Optional?
 	//Deck put (Card card) {
-			
+		
 	//}
 
  	// binigay ni sir na extra nung lab
