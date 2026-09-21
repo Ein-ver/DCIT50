@@ -37,7 +37,9 @@ public class Deck {
 	}
 	
 	Card take() {
-		return cards.get(0);
+		Card takeCard = cards.get(0);
+		cards.remove(0);
+		return takeCard;
 	}
 
 	// Optional?

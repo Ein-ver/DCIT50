@@ -12,13 +12,11 @@ public class Blackjack {
 
 	public static void main(String[] args) {
 		
-		System.out.println(deck.shuffle());
-		System.out.println("");
-		System.out.println(deck);
-		System.out.println("");
-		System.out.println(deck.take());
-		System.out.println("");
-		System.out.println(deck.shuffle().take());
+		//System.out.println(deck.shuffle());
+		System.out.println(deck.cards);
+		System.out.println(deck.take() + "\n");
+		System.out.println(deck.cards);
+		System.out.println(deck.cards.get(0));
 
 	}
 
