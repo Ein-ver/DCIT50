@@ -8,9 +8,13 @@ import java.util.ArrayList;
 public class Hand {
 	ArrayList<Card> cards = new ArrayList<>();
 
-	//Hand addCard(Card card) {
-		
-	//}
+	Hand addCard(Card card) {
+		Hand adds = new Hand();
+		cards.add(card);
+
+		adds.cards.addAll(cards);
+		return adds;	
+	}
 
 	//Hand removeCard(Card card) {
 

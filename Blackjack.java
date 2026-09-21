@@ -12,8 +12,10 @@ public class Blackjack {
 
 	public static void main(String[] args) {
 
-		System.out.println(deck);
-		System.out.println(deck.shuffle());
+		System.out.println(playerHand);
+		playerHand.addCard(deck.shuffle().take());
+		System.out.println(playerHand);
+		System.out.println(playerHand.cards);
 	}
 
 	//static int value(Card card) {
