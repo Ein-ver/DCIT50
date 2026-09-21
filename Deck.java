@@ -36,12 +36,13 @@ public class Deck {
 		return newDeck;
 	}
 	
-	//Card take() {
+	Card take() {
+		return cards.get(0);
+	}
 
-	//}
-
+	// Optional?
 	//Deck put (Card card) {
-		
+			
 	//}
 
  	// binigay ni sir na extra nung lab
