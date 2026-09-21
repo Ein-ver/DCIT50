@@ -18,19 +18,31 @@ public class Deck {
 				this.cards.add(newCard);
 			}
 		}
+
 	}
 
+	// Done i guess...
 	Deck shuffle() {
-		Collections.shuffle(this.cards);
-	}
+		// Create new Card
+		Deck newDeck = new Deck();
 
-	Card take() {
-
-	}
-
-	Deck put (Card card) {
+		// Shuffle them
+		Collections.shuffle(newDeck.cards);
 		
+		// Add tto this card
+		this.cards.clear();
+		this.cards.addAll(newDeck.cards);
+
+		return newDeck;
 	}
+	
+	//Card take() {
+
+	//}
+
+	//Deck put (Card card) {
+		
+	//}
 
  	// binigay ni sir na extra nung lab
 	public String toString() {
@@ -38,7 +50,7 @@ public class Deck {
 		for (int i = 0 ; i < cards.size() ; i++ ) {
 			card += cards.get(i) + "\n";
 		}
-		return "Deck: \n" + cards;
+		return "Deck: \n" + card;
 	}
 
 }
