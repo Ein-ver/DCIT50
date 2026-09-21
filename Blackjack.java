@@ -18,7 +18,8 @@ public class Blackjack {
 		int youVal = 0, comVal = 0;
 		String choice = "";
 		int deleteIndex = 0;
-		// GAME THING
+
+		// >>>>>>> GAME THING
 
 		// shuffle then add two cards
 		// Dito pwede naman shuffle muna bago mag take pero kelangan ata ng method chaining
@@ -78,6 +79,7 @@ public class Blackjack {
 							// nakalimutan ko pero alam ko lagi nagstuck kapag nagamit ng nextLine kaya meron uling ganito
 							sc.nextLine();
 							
+							// Check if the answer go below zero
 							if (deleteIndex < 0) {
 								System.out.println("nuh uh \n");
 								break;
@@ -109,7 +111,7 @@ public class Blackjack {
 		// DEBUG STUFF
 		//System.out.println(cardCheck);
 
-		// card.suit is brilliant Ese!!!
+		// card.suit is brilliant Ese!
 		// holy hell
 		// lmao its rank, not suit
 		if (cardCheck.contains("k") || cardCheck.contains("q") || cardCheck.contains("j")) {
