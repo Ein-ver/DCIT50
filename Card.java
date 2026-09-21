@@ -10,11 +10,13 @@ public class Card {
 	final static String[] RANKS = {"ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king"};
 
 	Card(String suit, String rank) {
+		// binigay ni sir na extra nung lab
 		this.suit = suit;
 		this.rank = rank;
 	}
 
 	public String toString() {
+		// binigay ni sir na extra nung lab
 		return this.suit + " of " + this.rank;
 	}
 }
