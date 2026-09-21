@@ -40,7 +40,7 @@ public class Blackjack {
 			// DEBUG STUFF
 			//System.out.println("Hand Value: " + youVal);
 			if (youVal <= 21) {
-				System.out.print("(Remove: type R) Hit [Y/N/]? ");
+				System.out.print("(Remove: type R) Hit [Y/N]? ");
 				choice = sc.nextLine().toUpperCase();
 
 				switch (choice) {
@@ -57,7 +57,7 @@ public class Blackjack {
 						}
 						else {
 							System.out.println("Computer Hand: \n" + computerHand);
-							System.out.println("Lmao.");
+							System.out.println("Lmao. (You Lost)");
 						}
 						break gurt;
 
