@@ -24,6 +24,6 @@ public class Card {
 
 	public String toString() {
 		// binigay ni sir na extra nung lab
-		return this.suit + " of " + this.rank;
+		return this.rank + " of " + this.suit;
 	}
 }
