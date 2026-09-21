@@ -13,7 +13,17 @@ public class Blackjack {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 
-		
+		// GAME THING
+
+		// shuffle then add two cards
+		deck.shuffle();
+		for ( int i = 0	; i < 2 ; i++ ) {
+			playerHand.addCard(deck.take());
+			computerHand.addCard(deck.take());
+		}
+		//while (true) {
+			System.out.println("Your Hand: \n" + playerHand);
+		//}
 
 	}
 

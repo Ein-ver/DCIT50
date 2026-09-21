@@ -29,6 +29,6 @@ public class Hand {
 		for (int i = 0 ; i < cards.size() ; i++) {
 			hand += cards.get(i) + "\n";
 		}
-		return "Hand: \n" + hand;
+		return hand;
 	}
 }
