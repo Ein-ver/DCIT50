@@ -46,9 +46,14 @@ public class Deck {
 	}
 
 	// Optional?
-	//Deck put (Card card) {
-		
-	//}
+	// nah
+	Deck put (Card card) {
+		Deck newDeck = Blackjack.deck;
+
+		newDeck.cards.add(card);
+
+		return newDeck;
+	}
 
  	// binigay ni sir na extra nung lab
 	public String toString() {

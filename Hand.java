@@ -16,13 +16,29 @@ public class Hand {
 		return adds;	
 	}
 
-	//Hand removeCard(Card card) {
+	Hand removeCard(Card card) {
+		Hand remove = new Hand();
 
-	//}
+		// put the card back to where it belongs
+		Blackjack.deck.put(card);
 
-	//int indexOfCard(Card card) {
+		cards.remove(card);
+		remove.cards.addAll(cards);
+		return remove;
+	}
 
-	//}
+	int indexOfCard(Card card) {
+		Card find = card;
+
+		for ( int i = 0 ; i < cards.size() ; i++ ) {
+			if (card == cards.get(i)) {
+				System.out.println(cards.get(i));
+				return i;
+			}
+		}
+
+		return 0;
+	}
 
 	public String toString() {
 		String hand = "";

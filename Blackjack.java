@@ -17,7 +17,7 @@ public class Blackjack {
 		// Variables
 		int youVal = 0, comVal = 0;
 		String choice = "";
-
+		int deleteIndex = 0;
 		// GAME THING
 
 		// shuffle then add two cards
@@ -39,16 +39,16 @@ public class Blackjack {
 			// DEBUG STUFF
 			//System.out.println("Hand Value: " + youVal);
 			if (youVal <= 21) {
-				System.out.print("Hit [Y/N]? ");
+				System.out.print("(Remove: type R) Hit [Y/N/]? ");
 				choice = sc.nextLine().toUpperCase();
 
-				// nakalimutan ko pero alam ko lagi nagstuck kapag nagamit ng nextLine kaya meron uling ganito
-				//sc.nextLine();
-
 				switch (choice) {
+					// Kapag nag yes
 					case "Y":
 						playerHand.addCard(deck.shuffle().take());
 						break;
+
+					// Kapag nag no
 					case "N":
 						if (youVal > comVal) {
 							System.out.println("Computer Hand: \n" + computerHand);
@@ -59,6 +59,36 @@ public class Blackjack {
 							System.out.println("Lmao.");
 						}
 						break gurt;
+
+					// Kapag ayaw na nya
+					case "R":
+						if (playerHand.cards.size() == 2) {
+							System.out.println("You shall not have only one card.\n");
+							break;
+						}
+						else {
+							System.out.println("\n== [THE CARD REMOVER] ==");
+							for (int i = 0 ; i < playerHand.cards.size() ; i++ ) {
+								System.out.println(i+1 + ". " + playerHand.cards.get(i));
+							}
+
+							System.out.print("Choose which card to delete [Number]: ");
+							deleteIndex = sc.nextInt() - 1;
+
+							// nakalimutan ko pero alam ko lagi nagstuck kapag nagamit ng nextLine kaya meron uling ganito
+							sc.nextLine();
+							
+							if (deleteIndex < 0) {
+								System.out.println("nuh uh \n");
+								break;
+							}
+							else {
+								playerHand.removeCard(playerHand.cards.get(deleteIndex));
+								System.out.println("\nCard successfully removed!\n");
+								break;
+							}
+
+						}
 					default:
 						System.out.println("What kinda answer is that broski\n");
 				}
