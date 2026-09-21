@@ -9,12 +9,13 @@ public class Blackjack {
 	static Deck deck = new Deck();
 	static Hand playerHand = new Hand();
 	static Hand computerHand = new Hand();
+	static int val = 0;
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 
 		// Variables
-		int playerVal = 0, compVal = 0;
+		int youHand = 0, comHand = 0;
 
 		//System.out.println(deck.cards.get(0));
 
@@ -29,8 +30,13 @@ public class Blackjack {
 		//while (true) {
 			System.out.println("Your Hand: \n" + playerHand);
 			for (int i = 0 ; i < playerHand.cards.size() ; i++) {
-				playerVal += value(playerHand.cards.get(i));
+				playerVal = value(playerHand.cards.get(i));
+				System.out.println("val value: " + val);
 			}
+
+			// reset
+			val = 0;
+
 			System.out.println("Value: " + playerVal);
 
 			System.out.println("Computer's Hand: \n" + computerHand);
@@ -40,7 +46,7 @@ public class Blackjack {
 
 	
 	static int value(Card card) {
-		int value = 0;
+		int value = val;
 
 		String cardCheck = card.rank;
 		System.out.println(cardCheck);
@@ -67,13 +73,13 @@ public class Blackjack {
 			value += Integer.parseInt(cardCheck);
 		}
 
-
+		val = value;
 		return value;
 	}
 	
 
-	//static int handValue(Hand hand) {
+	static int handValue(Hand hand) {
 		
-	//}
+	}
 }
 
